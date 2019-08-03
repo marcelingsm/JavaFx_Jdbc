@@ -8,44 +8,41 @@ package model.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author USER
- */
-public class Department implements Serializable {
-    
-    private Integer Id;
-    private String Name;
-    
+
+public class Department implements Serializable{
+    private Integer id;
+    private String name;
+
     public Department(){
         
     }
-
-    public Integer getId() {
-        return Id;
+    
+    public Department(Integer id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public void setId(Integer Id) {
-        this.Id = Id;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public Department(Integer Id, String Name) {
-        this.Id = Id;
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.Id);
+        int hash = 5;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 47 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -61,7 +58,7 @@ public class Department implements Serializable {
             return false;
         }
         final Department other = (Department) obj;
-        if (!Objects.equals(this.Id, other.Id)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
@@ -69,7 +66,10 @@ public class Department implements Serializable {
 
     @Override
     public String toString() {
-        return "Department{" + "Id=" + Id + ", Name=" + Name + '}';
+        return "Department{" + "id=" + id + ", name=" + name + '}';
     }
+    
+    
+    
     
 }
