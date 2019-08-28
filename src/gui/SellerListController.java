@@ -35,6 +35,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx_jdbc.Javafx_jdbc;
 import model.entities.Seller;
+import model.services.DepartmentService;
 import model.services.SellerService;
 
 /**
@@ -121,7 +122,8 @@ public class SellerListController implements Initializable, DataChangeListener {
 
             SellerFormController controller = loader.getController();
             controller.setSeller(obj);
-            controller.setSellerService(new SellerService());
+            controller.setServices(new SellerService(),new DepartmentService());
+            controller.loadAssociatedObjects();
             controller.subscribeDataChangeListener(this);
             controller.updateFormData();
 
@@ -157,8 +159,7 @@ public class SellerListController implements Initializable, DataChangeListener {
                 }
                 setGraphic(button);
                 button.setOnAction(
-                        event -> createDialogForm(
-                                obj, "/gui/SellerForm.fxml", Utils.currentStage(event)));
+                        event -> createDialogForm(obj, "/gui/SellerForm.fxml", Utils.currentStage(event)));
             }
         });
 
