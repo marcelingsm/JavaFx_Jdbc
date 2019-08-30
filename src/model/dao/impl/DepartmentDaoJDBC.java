@@ -5,19 +5,19 @@
  */
 package model.dao.impl;
 
+import model.dao.DepartmentDao;
+import model.entities.Department;
 import db.DB;
 import db.DbException;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import model.dao.DepartmentDao;
-import model.entities.Department;
+
 
 /**
  *

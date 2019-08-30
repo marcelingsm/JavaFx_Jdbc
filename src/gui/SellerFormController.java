@@ -86,6 +86,9 @@ public class SellerFormController implements Initializable {
 
     @FXML
     private Label labelErrorBaseSalary;
+    
+    @FXML
+    private Label labelErrorBaseDepartment;
 
     @FXML
     private Button btSave;
@@ -244,7 +247,7 @@ public class SellerFormController implements Initializable {
         } else {
             labelErrorBaseSalary.setText("");
         }
-
+        
     }
 
     private void initializeComboBoxDepartment() {
